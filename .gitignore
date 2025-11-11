@@ -70,3 +70,5 @@ Thumbs.db
 *.njsproj
 *.sln
 *.sw?
+.specstory/
+.specstory/history/

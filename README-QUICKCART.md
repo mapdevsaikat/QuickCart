@@ -21,7 +21,7 @@ A beautiful, mobile-first e-commerce checkout demo showcasing the power of **Qua
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 14+ installed
+- Node.js 20.9.0 or higher (required for Next.js 16)
 - QuantaRoute API key (get it from [quantaroute.com](https://developers.quantaroute.com))
 
 ### Installation
