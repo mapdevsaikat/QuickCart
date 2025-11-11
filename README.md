@@ -23,7 +23,7 @@ QuickCart is a mobile-first e-commerce demo application that demonstrates the ef
 
 ### Prerequisites
 
-- Node.js 18+ installed
+- Node.js 20.9.0 or higher (required for Next.js 16)
 - QuantaRoute API key ([Get one here](https://quantaroute.com))
 
 ### Installation

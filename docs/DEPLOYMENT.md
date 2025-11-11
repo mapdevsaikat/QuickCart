@@ -7,6 +7,7 @@ This guide will help you deploy QuickCart to GitHub Pages.
 1. A GitHub account
 2. A GitHub repository (named `QuickCart` or any name you prefer)
 3. QuantaRoute API key ([Get one here](https://quantaroute.com))
+4. Node.js 20.9.0 or higher (required for Next.js 16)
 
 ## 📋 Step-by-Step Deployment
 
