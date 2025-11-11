@@ -20,13 +20,14 @@ const nextConfig = {
     unoptimized: true,
   },
   
-  // Ignore ESLint during builds
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  
   // Disable trailing slash for cleaner URLs
   trailingSlash: false,
+  
+  // TypeScript and ESLint are handled via package.json scripts
+  typescript: {
+    // Ignore TypeScript errors during build (optional - remove if you want strict type checking)
+    ignoreBuildErrors: false,
+  },
 };
 
 module.exports = nextConfig;
