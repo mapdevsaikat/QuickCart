@@ -19,6 +19,10 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -40,7 +44,19 @@ jobs:
           NEXT_PUBLIC_QUANTAROUTE_API_KEY: ${{ secrets.NEXT_PUBLIC_QUANTAROUTE_API_KEY }}
           NODE_ENV: production
           GITHUB_REPOSITORY_NAME: ${{ github.event.repository.name }}
-        run: npm run build:gh-pages
+        run: |
+          echo "Repository name: ${{ github.event.repository.name }}"
+          npm run build:gh-pages
+        continue-on-error: false
+
+      - name: Verify build output
+        run: |
+          if [ ! -d "out" ]; then
+            echo "Error: Build output directory 'out' not found"
+            exit 1
+          fi
+          echo "Build output verified. Files in out directory:"
+          ls -la out | head -20
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

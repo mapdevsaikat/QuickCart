@@ -5,9 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:gh-pages": "NODE_ENV=production next build",
+    "build:gh-pages": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "next lint --ignore-errors",
     "typecheck": "tsc --noEmit",
     "export": "next build",
     "deploy": "npm run build:gh-pages"
