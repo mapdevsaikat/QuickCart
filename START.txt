@@ -1,0 +1,89 @@
+╔══════════════════════════════════════════════════════════════════╗
+║                                                                  ║
+║   ██████╗ ██╗   ██╗██╗ ██████╗██╗  ██╗ ██████╗ █████╗ ██████╗ ██████╗║
+║  ██╔═══██╗██║   ██║██║██╔════╝██║ ██╔╝██╔════╝██╔══██╗██╔══██╗╚══██╔╝║
+║  ██║   ██║██║   ██║██║██║     █████╔╝ ██║     ███████║██████╔╝  ██║ ║
+║  ██║▄▄ ██║██║   ██║██║██║     ██╔═██╗ ██║     ██╔══██║██╔══██╗  ██║ ║
+║  ╚██████╔╝╚██████╔╝██║╚██████╗██║  ██╗╚██████╗██║  ██║██║  ██║  ██║ ║
+║   ╚══▀▀═╝  ╚═════╝ ╚═╝ ╚═════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝  ╚═╝ ║
+║                                                                  ║
+║          Smart E-Commerce Checkout Demo                         ║
+║          Powered by QuantaRoute Geocoding API                   ║
+║                                                                  ║
+╚══════════════════════════════════════════════════════════════════╝
+
+🚀 GETTING STARTED
+════════════════════════════════════════════════════════════════════
+
+📋 STEP 1: Get Your QuantaRoute API Key
+   → Visit: https://quantaroute.com
+   → Sign up and get your API key
+
+🔑 STEP 2: Configure API Key
+   → Open .env.local file
+   → Add: NEXT_PUBLIC_QUANTAROUTE_API_KEY=your_api_key_here
+   → Save the file
+
+📦 STEP 3: Install Dependencies (if needed)
+   → Run: npm install
+
+▶️  STEP 4: Start Development Server
+   → Run: npm run dev
+
+🌐 STEP 5: Open in Browser
+   → Navigate to: http://localhost:3000
+
+════════════════════════════════════════════════════════════════════
+
+📚 DOCUMENTATION
+   • README-QUICKCART.md - Full documentation
+   • QUICKSTART.md       - Quick setup guide
+   • FEATURES.md         - Feature details
+   • SUMMARY.md          - Project overview
+   • FILES.md            - File structure
+
+🎯 IN-APP HELP
+   • Visit /setup page in the app for guided setup
+   • View interactive feature demonstrations
+
+✨ KEY FEATURES
+   ✓ Auto location detection
+   ✓ Smart address auto-fill
+   ✓ DigiPin integration
+   ✓ Interactive maps
+   ✓ 3-step checkout flow
+   ✓ Mobile-first design
+
+🛠️  COMMANDS
+   npm run dev   - Start development server
+   npm run build - Build for production
+   npm start     - Start production server
+
+📱 BROWSER SUPPORT
+   ✓ Chrome/Edge (recommended)
+   ✓ Firefox
+   ✓ Safari
+   ✓ Mobile browsers
+
+⚠️  REQUIREMENTS
+   • JavaScript enabled
+   • Geolocation API support (for auto-detection)
+   • Internet connection
+
+════════════════════════════════════════════════════════════════════
+
+🎉 READY TO GO!
+
+Once you've configured your API key, run:
+   npm run dev
+
+Then open http://localhost:3000 to see QuickCart in action!
+
+════════════════════════════════════════════════════════════════════
+
+Built with ❤️  to showcase QuantaRoute's powerful geocoding API
+
+🌐 QuantaRoute: https://quantaroute.com
+📧 Support: hello@quantaroute.com
+
+════════════════════════════════════════════════════════════════════
