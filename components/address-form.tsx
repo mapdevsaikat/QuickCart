@@ -138,9 +138,10 @@ export function AddressForm({ initialLocation, onSubmit }: AddressFormProps) {
         throw new Error('QuantaRoute API key not configured. Please set NEXT_PUBLIC_QUANTAROUTE_API_KEY in your environment.');
       }
 
-      // Step 1: Get DigiPin from coordinates - call QuantaRoute API directly
+      // Step 1: Get DigiPin and administrative info from coordinates
+      // Using the hosted MCP server REST API at https://mcp-gc.quantaroute.com/
       const lookupResponse = await fetch(
-        'https://api.quantaroute.com/v1/location/lookup',
+        'https://mcp-gc.quantaroute.com/api/lookup-location-from-coordinates',
         {
           method: 'POST',
           headers: {
@@ -154,14 +155,14 @@ export function AddressForm({ initialLocation, onSubmit }: AddressFormProps) {
       const lookupData = await lookupResponse.json();
 
       // Check if the response has an error
-      if (!lookupResponse.ok || lookupData.error) {
+      if (!lookupResponse.ok || lookupData.error || !lookupData.success) {
         const errorMessage = lookupData.message || lookupData.error || 'Failed to get location information';
         console.error('Location lookup error:', lookupData);
         throw new Error(errorMessage);
       }
 
       // Check if we have the expected success structure
-      if (!lookupData.success || !lookupData.data?.digipin) {
+      if (!lookupData.data?.digipin) {
         console.error('Invalid lookup response structure:', lookupData);
         throw new Error('Failed to get DigiPin - invalid response format');
       }
@@ -186,9 +187,10 @@ export function AddressForm({ initialLocation, onSubmit }: AddressFormProps) {
       };
 
       // Step 2: Get detailed address from DigiPin reverse API (optional - for address lines)
+      // Using the hosted MCP server REST API
       try {
         const reverseResponse = await fetch(
-          'https://api.quantaroute.com/v1/digipin/reverse',
+          'https://mcp-gc.quantaroute.com/api/reverse-geocode',
           {
             method: 'POST',
             headers: {
@@ -202,10 +204,10 @@ export function AddressForm({ initialLocation, onSubmit }: AddressFormProps) {
         const reverseData = await reverseResponse.json();
 
         // Check if the response has an error
-        if (!reverseResponse.ok || reverseData.error) {
+        if (!reverseResponse.ok || reverseData.error || !reverseData.success) {
           console.warn('Reverse lookup failed (non-critical):', reverseData);
           // Don't throw - we can still populate with admin_info
-        } else if (reverseData.success && reverseData.data?.address) {
+        } else if (reverseData.data?.address) {
           console.log('Step 2 success - Address:', reverseData.data.address);
 
           // Parse address and add address lines
