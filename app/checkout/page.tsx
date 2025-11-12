@@ -198,7 +198,7 @@ export default function CheckoutPage() {
                 Delivery Address
               </h2>
               <p className="text-sm text-gray-600">
-                Enter your delivery address with auto-populated details powered by QuantaRoute
+                Enter your delivery address with auto-populated details powered by QuantaRoute MCP Server REST API
               </p>
             </div>
 
